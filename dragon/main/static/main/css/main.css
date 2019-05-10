@@ -1,0 +1,26 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {	
+}
+
+ul#menu {
+  margin-bottom: 30px;
+  text-align: right;
+  margin:5%;
+}
+
+ul#menu li {
+  display: inline-block;
+}
+
+img {
+	width: 50%;
+	margin: 0 5%;
+}
+
+h2,p {
+	margin:2% 5%;
+}
