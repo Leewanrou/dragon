@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block css %}<link rel="stylesheet" href="{% static 'game/css/game.css' %}">{% endblock %}
+{% block content %}
+<p>你進入了<span class=red>充滿噴火龍</span>的時代，在你面前有兩個洞穴。<br>
+其中一個洞穴中住著<span class=green>親切的噴火龍</span>，牠願意和你分享<span class=red>寶藏。</span><br>
+另一個洞穴則住著<span class=brown>兇猛的噴火龍</span>，牠一看到你就會<span class=red>吃掉你。</span><br>
+你要進入哪一個洞穴？(1或2)</p>
+<form action="{% url 'game:game' %}" method=POST>
+  {% csrf_token %} 
+	<div>
+		<input type=number  name=guess>
+		<input type=submit value=送出>
+	</div>
+</form>
+
+<p class=blue>{{ text }}</p>
+<p>總題數：{{ record.totalNum }}{{ zero }}  答對：{{ record.answerNum }}{{ zero }}</p>
+
+<form action="{% url 'game:dele' %}" method="">
+  {% csrf_token %} 
+	<div>
+	  <input type=submit value=清除>
+	</div>
+</form>
+
+{% endblock %}
